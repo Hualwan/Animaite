@@ -45,7 +45,6 @@
           <option value="rollOut">滚出</option>
         </optgroup>
       </select>
-
       <button class="butt js--triggerAnimation">动起来</button>
     </form>
     <hr />
@@ -57,18 +56,13 @@
       $(this).removeClass();
     });
   };
-
   $(document).ready(function(){
     $('.js--triggerAnimation').click(function(e){
       e.preventDefault();
       var anim = $('.js--animations').val();
       testAnim(anim);
     });
-
-   
   });
-
 </script>
-
 </body>
 </html>

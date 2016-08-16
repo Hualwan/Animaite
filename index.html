@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animate.css</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="island">
+  <div class="wrap">
+   <span id="animationSandbox" style="display: block;"><h1 class="site__title mega">CSS3动画</h1></span>
+    <span>选择一个动画效果吧!</span>
+  </div>
+</header><!-- /.site__header -->
+
+<main class="island" role="content">
+  <div class="wrap">
+    <form>
+      <select class="input js--animations">
+        <optgroup label="选择一个动画">
+          <option value="bounce" >弹跳</option>
+          <option value="flash">闪烁</option>
+          <option value="pulse">脉搏</option>
+          <option value="rubberBand">橡皮筋</option>
+          <option value="shake">抖动</option>
+          <option value="swing">摆动</option>
+
+          <option value="bounceIn">弹进</option>
+          <option value="bounceInDown">自上划入</option>
+          <option value="bounceInLeft">自左划入</option>
+          <option value="bounceInRight">自右划入</option>
+          <option value="bounceInUp">自下滑入</option>
+
+          <option value="bounceOut">弹出</option>
+          <option value="bounceOutDown">向下划出</option>
+          <option value="bounceOutLeft">向左划出</option>
+          <option value="bounceOutRight">向右划出</option>
+          <option value="bounceOutUp">向上划出</option>
+          <option value="flip">翻转</option>
+          <option value="flipInX">X轴翻转</option>
+          <option value="flipInY">Y轴翻转</option>
+          <option value="rollIn">滚进</option>
+          <option value="rollOut">滚出</option>
+        </optgroup>
+      </select>
+
+      <button class="butt js--triggerAnimation">动起来</button>
+    </form>
+    <hr />
+
+<script src="js/jquery-3.1.0.js"></script>
+<script>
+  function testAnim(x) {
+    $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass();
+    });
+  };
+
+  $(document).ready(function(){
+    $('.js--triggerAnimation').click(function(e){
+      e.preventDefault();
+      var anim = $('.js--animations').val();
+      testAnim(anim);
+    });
+
+   
+  });
+
+</script>
+
+</body>
+</html>
